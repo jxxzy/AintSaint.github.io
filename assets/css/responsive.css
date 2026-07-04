@@ -1,0 +1,197 @@
+﻿@media (max-width: 1024px) {
+  .navbar,
+  .site-header .btn {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .mobile-menu.is-open {
+    display: block;
+  }
+
+  .hero__grid,
+  .two-column,
+  .booking-layout,
+  .talent-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__panel {
+    max-width: 620px;
+  }
+
+  .card-grid,
+  .mix-grid,
+  .service-grid,
+  .service-grid--compact,
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-bar--mixes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 66px;
+  }
+
+  .container,
+  .narrow {
+    width: min(100% - 24px, 1120px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 58px 0 52px;
+  }
+
+  .hero--subpage {
+    min-height: auto;
+    padding: 62px 0 44px;
+  }
+
+  .hero__logo {
+    width: 62px;
+    height: 62px;
+  }
+
+  .hero__actions,
+  .talent-card__actions,
+  .mix-card__actions,
+  .event-card__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .split-brand-grid,
+  .card-grid,
+  .mix-grid,
+  .event-grid,
+  .service-grid,
+  .service-grid--compact,
+  .contact-grid,
+  .architecture__children,
+  .reason-grid,
+  .detail-section-grid,
+  .gallery-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-card {
+    min-height: 380px;
+  }
+
+  .section {
+    padding: 62px 0;
+  }
+
+  .section--tight {
+    padding-top: 38px;
+  }
+
+  .section-header,
+  .cta-band,
+  .site-footer__bottom {
+    display: grid;
+    align-items: start;
+  }
+
+  .filter-bar {
+    display: grid;
+    align-items: stretch;
+  }
+
+  .filter-bar--mixes,
+  .form-grid,
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-mix .mix-card {
+    display: block;
+  }
+
+  .featured-mix .mix-card__thumb {
+    aspect-ratio: 16 / 10;
+    height: auto;
+  }
+
+  .signal-row {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-whatsapp {
+    right: 14px;
+    bottom: 14px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header__inner {
+    gap: 12px;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .brand span {
+    font-size: 0.95rem;
+  }
+
+  .hero h1,
+  .hero__simple h1 {
+    font-size: clamp(2.7rem, 16vw, 4.2rem);
+  }
+
+  .hero__tagline {
+    font-size: 1.15rem;
+  }
+
+  .hero__lead,
+  .hero__simple p {
+    font-size: 1rem;
+  }
+
+  .section-header h2,
+  .card h2,
+  .feature-band h2,
+  .cta-band h2 {
+    font-size: clamp(1.85rem, 12vw, 2.7rem);
+  }
+
+  .brand-card h2 {
+    font-size: clamp(2.35rem, 15vw, 3.4rem);
+  }
+
+  .card,
+  .talent-card__body,
+  .mix-card__body,
+  .event-card__body,
+  .service-card,
+  .contact-card,
+  .feature-band,
+  .cta-band {
+    padding: 18px;
+  }
+
+  .segmented-control {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+

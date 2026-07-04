@@ -1,0 +1,65 @@
+﻿[
+  {
+    "id": "service-dj-performance",
+    "title": "DJ Performance",
+    "description": "DJ performance untuk coffee shop, club, private party, campus event, dan brand event.",
+    "bestFor": ["Coffee Shop", "Club", "Private Party", "Brand Event"]
+  },
+  {
+    "id": "service-event-organizer",
+    "title": "Event Organizer",
+    "description": "Konsep, lineup, flow acara, dan koordinasi basic untuk event musik kecil sampai menengah.",
+    "bestFor": ["Club Night", "Community Event", "Campus Event"]
+  },
+  {
+    "id": "service-talent-booking",
+    "title": "Talent Booking",
+    "description": "Booking DJ AintSaint berdasarkan EO, genre direction, crowd, dan kebutuhan venue.",
+    "bestFor": ["Venue", "Private Client", "Sponsor"]
+  },
+  {
+    "id": "service-coffee-shop-event",
+    "title": "Coffee Shop Event",
+    "description": "Format musik sore atau malam untuk coffee shop yang ingin membuat crowd moment.",
+    "bestFor": ["Coffee Shop", "Pop-up", "Community"]
+  },
+  {
+    "id": "service-club-night",
+    "title": "Club Night",
+    "description": "Club format dengan direction SinnersNight, WestSidePeople, atau hybrid sesuai crowd.",
+    "bestFor": ["Club", "Bar", "Night Venue"]
+  },
+  {
+    "id": "service-private-party",
+    "title": "Private Party",
+    "description": "Lineup dan set direction untuk ulang tahun, private celebration, dan gathering.",
+    "bestFor": ["Private Party", "Gathering", "Afterparty"]
+  },
+  {
+    "id": "service-campus-event",
+    "title": "Campus Event",
+    "description": "DJ set dan music direction untuk event kampus dengan crowd muda dan dinamis.",
+    "bestFor": ["Campus Event", "Festival", "Student Community"]
+  },
+  {
+    "id": "service-brand-event",
+    "title": "Brand Event",
+    "description": "Music programming untuk activation, launch, dan event sponsor skala kecil sampai menengah.",
+    "bestFor": ["Brand Event", "Launch", "Activation"]
+  },
+  {
+    "id": "service-music-direction",
+    "title": "Music Direction",
+    "description": "Bantuan menentukan genre, mood, lineup, dan flow sound agar event punya identitas jelas.",
+    "bestFor": ["Venue", "Brand", "Community"]
+  },
+  {
+    "id": "service-media-aftermovie",
+    "title": "Media / Aftermovie",
+    "description": "Koordinasi konten event, short video, recap, dan dokumentasi ringan sesuai kebutuhan.",
+    "bestFor": ["Event Recap", "Social Content", "Sponsor Report"]
+  }
+]
+
+
+

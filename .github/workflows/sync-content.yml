@@ -1,0 +1,16 @@
+name: Future Content Sync
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync-content:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Placeholder
+        run: |
+          echo "Future sync target: update data/mixes.json and data/media.json using GitHub Secrets."
+          echo "No API keys are stored in frontend JavaScript."

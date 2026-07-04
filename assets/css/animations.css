@@ -1,0 +1,37 @@
+﻿@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 520ms ease, transform 520ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .talent-card,
+  .mix-card,
+  .event-card,
+  .service-card,
+  .contact-card {
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .talent-card:hover,
+  .mix-card:hover,
+  .event-card:hover,
+  .service-card:hover,
+  .contact-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+

@@ -1,0 +1,75 @@
+﻿[
+  {
+    "id": "event-001",
+    "title": "AintSaint Showcase",
+    "eoOwner": "Hybrid",
+    "venue": "Monday Coffee",
+    "city": "Indonesia",
+    "date": "2026-07-11",
+    "time": "15:00",
+    "lineup": ["talent-01", "talent-04", "talent-07"],
+    "genreDirection": "Global sound x local Indonesia energy",
+    "poster": "assets/img/events/event-001.jpg",
+    "description": "AintSaint Showcase adalah event dengan konsep global sound dan local Indonesia energy.",
+    "status": "Upcoming"
+  },
+  {
+    "id": "event-002",
+    "title": "SinnersNight: Global Room",
+    "eoOwner": "SinnersNight",
+    "venue": "Club Session",
+    "city": "Indonesia",
+    "date": "2026-07-25",
+    "time": "21:00",
+    "lineup": ["talent-01", "talent-02", "talent-03"],
+    "genreDirection": "Baile Funk, Afro House, Tech House, Bass House",
+    "poster": "assets/img/events/event-placeholder.jpg",
+    "description": "International club direction untuk venue yang butuh sound modern dan premium.",
+    "status": "Upcoming"
+  },
+  {
+    "id": "event-003",
+    "title": "WestSidePeople Local Crowd",
+    "eoOwner": "WestSidePeople",
+    "venue": "Community Yard",
+    "city": "Indonesia",
+    "date": "2026-08-08",
+    "time": "19:00",
+    "lineup": ["talent-04", "talent-05", "talent-06"],
+    "genreDirection": "Breakbeat, Funkot, Hardfunk, Local Remix Culture",
+    "poster": "assets/img/events/event-placeholder.jpg",
+    "description": "Local Indonesia sound dengan konsep crowd culture dan community showcase.",
+    "status": "Upcoming"
+  },
+  {
+    "id": "event-004",
+    "title": "Coffee Switch Session",
+    "eoOwner": "Hybrid",
+    "venue": "Neighbour Coffee",
+    "city": "Indonesia",
+    "date": "2026-06-21",
+    "time": "16:00",
+    "lineup": ["talent-02", "talent-06"],
+    "genreDirection": "Warm global groove x local remix",
+    "poster": "assets/img/events/event-placeholder.jpg",
+    "description": "Sesi sore untuk coffee shop dengan transisi global dan lokal yang ringan.",
+    "status": "Past"
+  },
+  {
+    "id": "event-005",
+    "title": "Private Bass Room",
+    "eoOwner": "SinnersNight",
+    "venue": "Private Venue",
+    "city": "Indonesia",
+    "date": "2026-05-31",
+    "time": "22:00",
+    "lineup": ["talent-03", "talent-07"],
+    "genreDirection": "Trap, Drum & Bass, Local x Global Switch",
+    "poster": "assets/img/events/event-placeholder.jpg",
+    "description": "Private party dengan sound bass dan switch cepat untuk crowd kecil.",
+    "status": "Past"
+  }
+]
+
+
+

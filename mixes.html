@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AintSaint Music / Mix Library</title>
+    <meta name="description" content="Main AintSaint Music / Mix Library dengan filter EO owner, talent, platform, content type, dan genre.">
+    <meta property="og:title" content="AintSaint Music / Mix Library">
+    <meta property="og:description" content="Explore published mixes, live set, short video, reel, recap, dan visualizer AintSaint.">
+    <meta property="og:image" content="assets/img/mixes/mix-001.jpg">
+    <link rel="icon" href="assets/img/logos/aintsaint-logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+  </head>
+  <body data-page="mixes">
+    <div id="site-header"></div>
+    <main>
+      <section class="hero hero--subpage">
+        <div class="container hero__simple reveal">
+          <h1>Music / Mix Library</h1>
+          <p>Main AintSaint library untuk semua mix, live set, reel, short video, recap, dan visualizer dari setiap talent.</p>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div id="featured-mix" class="featured-mix"></div>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container">
+          <form class="filter-bar filter-bar--mixes" id="mix-filter-form">
+            <label>
+              <span>EO owner</span>
+              <select id="filter-eo">
+                <option value="All">All</option>
+                <option value="SinnersNight">SinnersNight</option>
+                <option value="WestSidePeople">WestSidePeople</option>
+                <option value="Hybrid">Hybrid</option>
+              </select>
+            </label>
+            <label>
+              <span>Talent</span>
+              <select id="filter-talent">
+                <option value="All">All</option>
+              </select>
+            </label>
+            <label>
+              <span>Platform</span>
+              <select id="filter-platform">
+                <option value="All">All</option>
+                <option value="YouTube">YouTube</option>
+                <option value="SoundCloud">SoundCloud</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Instagram">Instagram</option>
+              </select>
+            </label>
+            <label>
+              <span>Content Type</span>
+              <select id="filter-type">
+                <option value="All">All</option>
+                <option value="Mix">Mix</option>
+                <option value="Live Set">Live Set</option>
+                <option value="Studio Mix">Studio Mix</option>
+                <option value="Reel">Reel</option>
+                <option value="Short Video">Short Video</option>
+                <option value="Event Recap">Event Recap</option>
+                <option value="Behind The Scene">Behind The Scene</option>
+                <option value="Visualizer">Visualizer</option>
+              </select>
+            </label>
+            <label>
+              <span>Genre</span>
+              <select id="filter-genre">
+                <option value="All">All</option>
+                <option value="Baile Funk">Baile Funk</option>
+                <option value="Afro House">Afro House</option>
+                <option value="Tech House">Tech House</option>
+                <option value="Jersey Club">Jersey Club</option>
+                <option value="Bass House">Bass House</option>
+                <option value="Trap">Trap</option>
+                <option value="Drum & Bass">Drum &amp; Bass</option>
+                <option value="Breakbeat">Breakbeat</option>
+                <option value="Funkot">Funkot</option>
+                <option value="Hardfunk">Hardfunk</option>
+                <option value="Indo Bounce">Indo Bounce</option>
+                <option value="BKB">BKB</option>
+                <option value="BLB">BLB</option>
+                <option value="Jungle Dutch">Jungle Dutch</option>
+                <option value="Dutch Boxing">Dutch Boxing</option>
+                <option value="Campursari Switch">Campursari Switch</option>
+                <option value="Local x Global Switch">Local x Global Switch</option>
+              </select>
+            </label>
+          </form>
+          <div id="mix-results-count" class="result-count"></div>
+          <div id="mix-grid" class="mix-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--cta">
+        <div class="container cta-band reveal">
+          <div>
+            <h2>Want this sound at your event?</h2>
+            <p>Share the mix reference in your booking notes and AintSaint will help shape the lineup.</p>
+          </div>
+          <a class="btn btn-light" href="booking.html">Book Event</a>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <a class="floating-whatsapp" href="booking.html" aria-label="Chat WhatsApp AintSaint" data-whatsapp-link><img src="assets/icons/whatsapp.svg" alt=""></a>
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/render-mixes.js"></script>
+  </body>
+</html>
+
+
+

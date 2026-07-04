@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AintSaint Media</title>
+    <meta name="description" content="AintSaint Media menampilkan video, reels, aftermovie, behind the scene, event recap, dan talent content.">
+    <meta property="og:title" content="AintSaint Media">
+    <meta property="og:description" content="Media hub AintSaint untuk SinnersNight, WestSidePeople, dan talent content.">
+    <meta property="og:image" content="assets/img/media/media-001.jpg">
+    <link rel="icon" href="assets/img/logos/aintsaint-logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+  </head>
+  <body data-page="media">
+    <div id="site-header"></div>
+    <main>
+      <section class="hero hero--subpage">
+        <div class="container hero__simple reveal">
+          <h1>AintSaint Media</h1>
+          <p>Latest content, video, reels, aftermovie, behind the scene, event recap, dan talent content dari AintSaint.</p>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container">
+          <form class="filter-bar filter-bar--mixes" id="media-filter-form">
+            <label>
+              <span>EO owner</span>
+              <select id="filter-media-eo">
+                <option value="All">All</option>
+                <option value="Hybrid">AintSaint</option>
+                <option value="SinnersNight">SinnersNight</option>
+                <option value="WestSidePeople">WestSidePeople</option>
+              </select>
+            </label>
+            <label>
+              <span>Talent</span>
+              <select id="filter-media-talent">
+                <option value="All">All</option>
+              </select>
+            </label>
+            <label>
+              <span>Platform</span>
+              <select id="filter-media-platform">
+                <option value="All">All</option>
+                <option value="YouTube">YouTube</option>
+                <option value="SoundCloud">SoundCloud</option>
+                <option value="TikTok">TikTok</option>
+                <option value="Instagram">Instagram</option>
+              </select>
+            </label>
+            <label>
+              <span>Content</span>
+              <select id="filter-media-type">
+                <option value="All">All</option>
+                <option value="Reel">Reel</option>
+                <option value="Short Video">Short Video</option>
+                <option value="Event Recap">Event Recap</option>
+                <option value="Behind The Scene">Behind The Scene</option>
+              </select>
+            </label>
+            <label>
+              <span>Category</span>
+              <select id="filter-media-category">
+                <option value="All">All</option>
+                <option value="Video">Video</option>
+                <option value="Reels">Reels</option>
+                <option value="Aftermovie">Aftermovie</option>
+                <option value="Talent Content">Talent Content</option>
+              </select>
+            </label>
+          </form>
+          <div id="media-results-count" class="result-count"></div>
+          <div id="media-grid" class="mix-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--cta">
+        <div class="container cta-band reveal">
+          <div>
+            <h2>Need media for your event?</h2>
+            <p>AintSaint bisa bantu arahkan recap, reels, dan short content sesuai karakter EO dan talent.</p>
+          </div>
+          <a class="btn btn-light" href="booking.html">Book Event</a>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <a class="floating-whatsapp" href="booking.html" aria-label="Chat WhatsApp AintSaint" data-whatsapp-link><img src="assets/icons/whatsapp.svg" alt=""></a>
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/render-media.js"></script>
+  </body>
+</html>

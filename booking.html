@@ -1,0 +1,143 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book AintSaint</title>
+    <meta name="description" content="Booking AintSaint, SinnersNight, WestSidePeople, atau talent DJ via WhatsApp.">
+    <meta property="og:title" content="Book AintSaint">
+    <meta property="og:description" content="Isi form booking dan website akan generate pesan WhatsApp otomatis.">
+    <meta property="og:image" content="assets/img/hero/home-hero.jpg">
+    <link rel="icon" href="assets/img/logos/aintsaint-logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+  </head>
+  <body data-page="booking">
+    <div id="site-header"></div>
+    <main>
+      <section class="hero hero--subpage">
+        <div class="container hero__simple reveal">
+          <h1>Book AintSaint</h1>
+          <p>Isi detail acara, pilih EO direction atau talent, lalu website akan membuat pesan WhatsApp otomatis.</p>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container booking-layout">
+          <form class="booking-form card reveal" id="booking-form" novalidate>
+            <div class="form-grid">
+              <label>
+                <span>Nama pemesan *</span>
+                <input name="name" type="text" autocomplete="name" required>
+              </label>
+              <label>
+                <span>WhatsApp *</span>
+                <input name="whatsapp" type="tel" autocomplete="tel" required>
+              </label>
+              <label>
+                <span>Email</span>
+                <input name="email" type="email" autocomplete="email">
+              </label>
+              <label>
+                <span>Pilih EO *</span>
+                <select name="eo" required>
+                  <option value="">Choose EO direction</option>
+                  <option value="SinnersNight">SinnersNight</option>
+                  <option value="WestSidePeople">WestSidePeople</option>
+                  <option value="Hybrid">Hybrid / AintSaint Collaboration</option>
+                </select>
+              </label>
+              <label>
+                <span>Pilih talent</span>
+                <select name="talent" id="booking-talent">
+                  <option value="All / Not sure yet">All / Not sure yet</option>
+                </select>
+              </label>
+              <label>
+                <span>Jenis acara *</span>
+                <select name="eventType" required>
+                  <option value="">Choose event type</option>
+                  <option value="Coffee shop">Coffee shop</option>
+                  <option value="Club">Club</option>
+                  <option value="Private party">Private party</option>
+                  <option value="Campus event">Campus event</option>
+                  <option value="Festival">Festival</option>
+                  <option value="Brand event">Brand event</option>
+                  <option value="Community event">Community event</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label>
+                <span>Tanggal acara *</span>
+                <input name="eventDate" type="date" required>
+              </label>
+              <label>
+                <span>Jam acara *</span>
+                <input name="eventTime" type="time" required>
+              </label>
+              <label>
+                <span>Lokasi acara *</span>
+                <input name="location" type="text" required>
+              </label>
+              <label>
+                <span>Durasi perform</span>
+                <input name="duration" type="text" placeholder="Example: 2 hours">
+              </label>
+              <label>
+                <span>Budget</span>
+                <input name="budget" type="text" placeholder="Example: 2-5 juta">
+              </label>
+              <label>
+                <span>Request genre</span>
+                <input name="genreRequest" type="text" placeholder="Example: Baile Funk, Breakbeat">
+              </label>
+              <label>
+                <span>Sound system tersedia?</span>
+                <select name="soundSystem">
+                  <option value="Not sure">Not sure</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+              </label>
+              <input name="eventReference" id="booking-event-reference" type="hidden">
+              <label class="form-full">
+                <span>Catatan tambahan</span>
+                <textarea name="notes" rows="5" placeholder="Tell us about the crowd, venue, lineup idea, or special request."></textarea>
+              </label>
+            </div>
+            <p class="form-message" id="booking-message" aria-live="polite"></p>
+            <button class="btn btn-primary" type="submit">Generate WhatsApp Message</button>
+          </form>
+
+          <aside class="booking-notes reveal">
+            <div class="card">
+              <h2>Booking Notes</h2>
+              <p>Form ini tidak menyimpan data pribadi. Setelah submit, pesan akan dibuka di WhatsApp owner AintSaint.</p>
+              <ul class="check-list">
+                <li>Gunakan SinnersNight untuk global club sound.</li>
+                <li>Gunakan WestSidePeople untuk local Indonesia sound.</li>
+                <li>Pilih Hybrid jika ingin gabungan dua direction.</li>
+                <li>Tulis budget dan venue agar rekomendasi talent lebih tepat.</li>
+              </ul>
+            </div>
+            <div class="card contact-alt">
+              <h2>Contact Alternative</h2>
+              <p>Email: <a href="mailto:booking@aintsaint.media" data-setting-email>booking@aintsaint.media</a></p>
+              <p>WhatsApp: <a href="#" data-whatsapp-link>Chat AintSaint</a></p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <a class="floating-whatsapp" href="booking.html" aria-label="Chat WhatsApp AintSaint" data-whatsapp-link><img src="assets/icons/whatsapp.svg" alt=""></a>
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/booking.js"></script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,35 @@
+﻿[
+  {
+    "id": "gallery-001",
+    "title": "AintSaint Event Moment",
+    "eoOwner": "Hybrid",
+    "talentId": "talent-01",
+    "eventId": "event-001",
+    "image": "assets/img/gallery/gallery-placeholder.jpg",
+    "category": "Event",
+    "date": "2026-07-05"
+  },
+  {
+    "id": "gallery-002",
+    "title": "SinnersNight Booth",
+    "eoOwner": "SinnersNight",
+    "talentId": "talent-02",
+    "eventId": "event-002",
+    "image": "assets/img/gallery/gallery-placeholder.jpg",
+    "category": "Booth",
+    "date": "2026-07-03"
+  },
+  {
+    "id": "gallery-003",
+    "title": "WestSidePeople Crowd",
+    "eoOwner": "WestSidePeople",
+    "talentId": "talent-04",
+    "eventId": "event-003",
+    "image": "assets/img/gallery/gallery-placeholder.jpg",
+    "category": "Crowd",
+    "date": "2026-06-25"
+  }
+]
+
+
+

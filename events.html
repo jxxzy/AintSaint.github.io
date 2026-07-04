@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AintSaint Events</title>
+    <meta name="description" content="Upcoming dan past event AintSaint, SinnersNight, WestSidePeople, dan Hybrid showcase.">
+    <meta property="og:title" content="AintSaint Events">
+    <meta property="og:description" content="Event card dari JSON dengan poster, lineup, venue, date, dan booking CTA.">
+    <meta property="og:image" content="assets/img/events/event-001.jpg">
+    <link rel="icon" href="assets/img/logos/aintsaint-logo.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+  </head>
+  <body data-page="events">
+    <div id="site-header"></div>
+    <main>
+      <section class="hero hero--subpage">
+        <div class="container hero__simple reveal">
+          <h1>AintSaint Events</h1>
+          <p>Upcoming showcase, past event, dan event concept dari SinnersNight, WestSidePeople, dan Hybrid direction.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Upcoming Events</h2>
+            <p>Sorted by closest date.</p>
+          </div>
+          <div id="upcoming-events" class="event-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container">
+          <div class="section-header">
+            <h2>Past Events</h2>
+            <p>Recent AintSaint moments and collaborations.</p>
+          </div>
+          <div id="past-events" class="event-grid"></div>
+        </div>
+      </section>
+
+      <section class="section section--cta">
+        <div class="container cta-band reveal">
+          <div>
+            <h2>Create your next AintSaint event.</h2>
+            <p>Book SinnersNight, WestSidePeople, or a hybrid showcase for your venue or community.</p>
+          </div>
+          <a class="btn btn-light" href="booking.html">Booking / Collab</a>
+        </div>
+      </section>
+    </main>
+    <div class="modal" id="event-modal" aria-hidden="true">
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close event detail">Close</button>
+        <div id="event-modal-content"></div>
+      </div>
+    </div>
+    <div id="site-footer"></div>
+    <a class="floating-whatsapp" href="booking.html" aria-label="Chat WhatsApp AintSaint" data-whatsapp-link><img src="assets/icons/whatsapp.svg" alt=""></a>
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/render-events.js"></script>
+  </body>
+</html>
+
+
+

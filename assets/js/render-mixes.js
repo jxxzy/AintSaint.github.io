@@ -4,9 +4,13 @@
   }
 
   function mixCard(mix) {
-    const url = mix.url || "#";
+    const url = mix.url || "";
+    const shareTarget = url || `${window.location.href.split("#")[0]}#${encodeURIComponent(mix.id)}`;
+    const action = url
+      ? `<a class="btn btn-primary" href="${SWUtils.escapeHTML(url)}" target="_blank" rel="noopener">Listen / Watch</a>`
+      : `<button class="btn btn-primary is-disabled" type="button" disabled>Link pending</button>`;
     return `
-      <article class="mix-card reveal">
+      <article class="mix-card reveal" id="${SWUtils.escapeHTML(mix.id)}">
         <img class="mix-card__thumb" src="${SWUtils.escapeHTML(mix.thumbnail)}" alt="${SWUtils.escapeHTML(mix.title)} thumbnail">
         <div class="mix-card__body">
           <div class="mix-card__topline">
@@ -19,8 +23,8 @@
           <div class="tag-cloud">${SWUtils.genreTags(mix.genres)}</div>
           <p>${SWUtils.formatDate(mix.publishedAt)}</p>
           <div class="mix-card__actions">
-            <a class="btn btn-primary" href="${SWUtils.escapeHTML(url)}" target="_blank" rel="noopener">Listen / Watch</a>
-            <button class="btn btn-ghost" type="button" data-share-url="${SWUtils.escapeHTML(url)}" data-share-title="${SWUtils.escapeHTML(mix.title)}">Share</button>
+            ${action}
+            <button class="btn btn-ghost" type="button" data-share-url="${SWUtils.escapeHTML(shareTarget)}" data-share-title="${SWUtils.escapeHTML(mix.title)}">Share</button>
           </div>
         </div>
       </article>

@@ -60,6 +60,16 @@
     renderEventCards("home-events", [...upcoming, ...past], talents);
   }
 
+  async function renderFeaturedEventByEO(containerId, eoOwner) {
+    const { events, talents } = await eventContext();
+    const filtered = SWUtils.sortByDateAsc(
+      events.filter((event) => event.status === "Upcoming" && (event.eoOwner === eoOwner || event.eoOwner === "Hybrid")),
+      "date"
+    );
+    renderEventCards(containerId, filtered.slice(0, 1), talents);
+    initEventModal(events, talents);
+  }
+
   function modalHTML(event, talents) {
     const lineup = (event.lineup || []).map((id) => SWUtils.talentNameById(talents, id)).join(", ");
     return `
@@ -113,6 +123,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     const page = document.body.dataset.page;
     if (page === "home") renderHomeEvents();
+    if (page === "sinnersnight") renderFeaturedEventByEO("sinners-featured-event", "SinnersNight");
+    if (page === "westsidepeople") renderFeaturedEventByEO("westside-featured-event", "WestSidePeople");
     if (page === "events") {
       renderUpcomingEvents("upcoming-events");
       renderPastEvents("past-events");
@@ -121,6 +133,7 @@
 
   window.renderUpcomingEvents = renderUpcomingEvents;
   window.renderPastEvents = renderPastEvents;
+  window.renderFeaturedEventByEO = renderFeaturedEventByEO;
   window.renderEventCards = renderEventCards;
 })();
 

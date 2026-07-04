@@ -12,5 +12,7 @@ jobs:
 
       - name: Placeholder
         run: |
+          echo "Auto sync is not active yet."
+          echo "Current content update mode: manual JSON edits in data/."
           echo "Future sync target: update data/mixes.json and data/media.json using GitHub Secrets."
-          echo "No API keys are stored in frontend JavaScript."
+          echo "Never store API keys in frontend JavaScript."

@@ -8,6 +8,7 @@
     ["mixes.html", "Music / Mixes"],
     ["events.html", "Events"],
     ["media.html", "Media"],
+    ["services.html", "Services"],
     ["booking.html", "Booking"],
     ["contact.html", "Contact"]
   ];
@@ -58,6 +59,20 @@
   function renderFooter(settings) {
     const mount = document.getElementById("site-footer");
     if (!mount) return;
+    const socialItems = [
+      ["Instagram AintSaint", settings.instagramAintSaint],
+      ["Instagram SinnersNight", settings.instagramSinnersNight],
+      ["Instagram WestSidePeople", settings.instagramWestSidePeople],
+      ["TikTok", settings.tiktok],
+      ["YouTube", settings.youtube],
+      ["SoundCloud", settings.soundcloud]
+    ];
+    const socialList = socialItems
+      .map(([label, url]) => {
+        if (url) return `<li><a href="${SWUtils.escapeHTML(url)}" target="_blank" rel="noopener">${SWUtils.escapeHTML(label)}</a></li>`;
+        return `<li><span class="muted-link">${SWUtils.escapeHTML(label)} - pending</span></li>`;
+      })
+      .join("");
     mount.innerHTML = `
       <footer class="site-footer">
         <div class="container">
@@ -71,6 +86,7 @@
             <div>
               <h3>Explore</h3>
               <ul>
+                <li><a href="about.html">About</a></li>
                 <li><a href="sinnersnight.html">SinnersNight</a></li>
                 <li><a href="westsidepeople.html">WestSidePeople</a></li>
                 <li><a href="talents.html">Talents</a></li>
@@ -82,14 +98,19 @@
               <h3>Business</h3>
               <ul>
                 <li><a href="events.html">Events</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="booking.html">Booking</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
             <div>
+              <h3>Social</h3>
+              <ul>${socialList}</ul>
+            </div>
+            <div>
               <h3>Contact</h3>
               <ul>
-                <li><a href="${SWUtils.toWhatsAppUrl(settings.whatsapp, "Halo AintSaint, saya ingin bertanya tentang booking.")}">WhatsApp</a></li>
+                <li><a href="${SWUtils.toWhatsAppUrl(settings.whatsapp, "Halo AintSaint, saya ingin bertanya tentang booking.")}">WhatsApp Booking</a></li>
                 <li><a href="mailto:${SWUtils.escapeHTML(settings.email)}">${SWUtils.escapeHTML(settings.email)}</a></li>
                 <li>${SWUtils.escapeHTML(settings.address)}</li>
               </ul>
@@ -148,6 +169,22 @@
       }
     });
 
+    function setOptionalLink(link, url) {
+      if (url) {
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.classList.remove("is-disabled");
+        link.removeAttribute("aria-disabled");
+        return;
+      }
+      link.removeAttribute("href");
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+      link.classList.add("is-disabled");
+      link.setAttribute("aria-disabled", "true");
+    }
+
     const socialMap = [
       ["data-setting-instagram-aintsaint", settings.instagramAintSaint],
       ["data-setting-instagram-sinners", settings.instagramSinnersNight],
@@ -158,9 +195,7 @@
     ];
     socialMap.forEach(([attr, url]) => {
       document.querySelectorAll(`[${attr}]`).forEach((link) => {
-        link.href = url;
-        link.target = "_blank";
-        link.rel = "noopener";
+        setOptionalLink(link, url);
       });
     });
   }
@@ -184,6 +219,9 @@
       { threshold: 0.16 }
     );
     elements.forEach((element) => observer.observe(element));
+    window.setTimeout(() => {
+      elements.forEach((element) => element.classList.add("is-visible"));
+    }, 80);
   }
 
   async function initShell() {

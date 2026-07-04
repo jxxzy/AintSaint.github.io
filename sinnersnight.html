@@ -50,6 +50,77 @@
         </div>
       </section>
 
+      <section class="section section--soft">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2>Featured SinnersNight Event</h2>
+              <p>Upcoming global sound event atau hybrid showcase yang relevan untuk SinnersNight.</p>
+            </div>
+            <a class="text-link" href="events.html">All events</a>
+          </div>
+          <div id="sinners-featured-event" class="event-grid"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-column">
+          <article class="card reveal">
+            <h2>SinnersNight Event Format</h2>
+            <ul class="check-list">
+              <li>Global Club Night</li>
+              <li>After Dark Session</li>
+              <li>International Sound Showcase</li>
+              <li>Private Global Room</li>
+              <li>Coffee Night Session</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h2>SinnersNight Best For</h2>
+            <ul class="check-list">
+              <li>Club night</li>
+              <li>Bar / lounge</li>
+              <li>Private party</li>
+              <li>Brand event</li>
+              <li>Campus event</li>
+              <li>Premium coffee shop night</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2>SinnersNight Services</h2>
+              <p>Service yang paling cocok untuk global club sound dan modern nightlife energy.</p>
+            </div>
+            <a class="text-link" href="services.html">View services</a>
+          </div>
+          <div class="service-grid service-grid--compact">
+            <article class="service-card reveal">
+              <h3>Club Night</h3>
+              <p>Format room malam dengan global club direction dan energy peak-time.</p>
+              <div class="tag-cloud"><span>Club</span><span>Bar</span><span>Night Venue</span></div>
+              <a class="btn btn-primary" href="booking.html?service=service-club-night&eo=sinnersnight">Book This Service</a>
+            </article>
+            <article class="service-card reveal">
+              <h3>DJ Performance</h3>
+              <p>Performance DJ untuk event yang butuh sound global, premium, dan energetic.</p>
+              <div class="tag-cloud"><span>Club Night</span><span>Private Party</span><span>Brand Event</span></div>
+              <a class="btn btn-primary" href="booking.html?service=service-dj-performance&eo=sinnersnight">Book This Service</a>
+            </article>
+            <article class="service-card reveal">
+              <h3>Music Direction</h3>
+              <p>Curated genre, mood, lineup, dan flow sound untuk konsep international direction.</p>
+              <div class="tag-cloud"><span>Venue</span><span>Brand</span><span>Showcase</span></div>
+              <a class="btn btn-primary" href="booking.html?service=service-music-direction&eo=sinnersnight">Book This Service</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section section--soft" id="sinners-talents">
         <div class="container">
           <div class="section-header">
@@ -91,17 +162,24 @@
 
       <section class="section">
         <div class="container feature-band feature-band--sinners reveal">
-          <h2>Event Concept</h2>
-          <p>Underground club room, international showcase, peak-time bass set, dan premium lounge session untuk client yang ingin sound luar Indonesia terasa jelas.</p>
+          <h2>Book SinnersNight</h2>
+          <p>Book SinnersNight for global club sound, international genre direction, and modern nightlife energy.</p>
           <a class="btn btn-primary" href="booking.html?eo=sinnersnight">Book SinnersNight</a>
         </div>
       </section>
     </main>
+    <div class="modal" id="event-modal" aria-hidden="true">
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close event detail">Close</button>
+        <div id="event-modal-content"></div>
+      </div>
+    </div>
     <div id="site-footer"></div>
     <a class="floating-whatsapp" href="booking.html" aria-label="Chat WhatsApp AintSaint" data-whatsapp-link><img src="assets/icons/whatsapp.svg" alt=""></a>
     <script src="assets/js/data-loader.js"></script>
     <script src="assets/js/utils.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/render-events.js"></script>
     <script src="assets/js/render-talents.js"></script>
     <script src="assets/js/render-mixes.js"></script>
     <script src="assets/js/render-media.js"></script>

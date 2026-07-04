@@ -83,6 +83,39 @@
       </section>
 
       <section class="section">
+        <div class="container feature-band reveal">
+          <div class="section-header">
+            <div>
+              <h2>Book Us For</h2>
+              <p>Format event yang paling cocok untuk AintSaint, SinnersNight, dan WestSidePeople.</p>
+            </div>
+            <a class="text-link" href="services.html">View services</a>
+          </div>
+          <div class="reason-grid">
+            <div>Coffee Shop Event</div>
+            <div>Club Night</div>
+            <div>Private Party</div>
+            <div>Campus Event</div>
+            <div>Brand Event</div>
+            <div>Community Showcase</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2>Featured / Upcoming Event</h2>
+              <p>Upcoming showcase dan event terbaru dari AintSaint.</p>
+            </div>
+            <a class="text-link" href="events.html">View events</a>
+          </div>
+          <div id="home-events" class="event-grid"></div>
+        </div>
+      </section>
+
+      <section class="section">
         <div class="container">
           <div class="section-header">
             <div>
@@ -108,19 +141,6 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <div>
-              <h2>Latest Events</h2>
-              <p>Upcoming showcase dan event terbaru dari AintSaint.</p>
-            </div>
-            <a class="text-link" href="events.html">View events</a>
-          </div>
-          <div id="home-events" class="event-grid"></div>
-        </div>
-      </section>
-
       <section class="section section--soft">
         <div class="container">
           <div class="section-header">
@@ -131,6 +151,33 @@
             <a class="text-link" href="media.html">Open media hub</a>
           </div>
           <div id="home-media" class="mix-grid"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2>Services Highlight</h2>
+              <p>Layanan utama untuk event, venue, brand, dan komunitas.</p>
+            </div>
+            <a class="text-link" href="services.html">All services</a>
+          </div>
+          <div id="home-services" class="service-grid service-grid--compact"></div>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container two-column">
+          <div class="section-header reveal">
+            <h2>How Booking Works</h2>
+            <p>Booking dibuat sederhana: pilih direction, pilih kebutuhan, lalu kirim request yang sudah rapi ke WhatsApp.</p>
+          </div>
+          <div class="process-list reveal">
+            <div>Choose EO direction</div>
+            <div>Choose talent / service</div>
+            <div>Send booking request via WhatsApp</div>
+          </div>
         </div>
       </section>
 
@@ -163,6 +210,12 @@
         </div>
       </section>
     </main>
+    <div class="modal" id="event-modal" aria-hidden="true">
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close event detail">Close</button>
+        <div id="event-modal-content"></div>
+      </div>
+    </div>
     <div id="site-footer"></div>
     <a class="floating-whatsapp" href="booking.html" aria-label="Chat WhatsApp AintSaint" data-whatsapp-link>
       <img src="assets/icons/whatsapp.svg" alt="">
@@ -174,6 +227,7 @@
     <script src="assets/js/render-mixes.js"></script>
     <script src="assets/js/render-events.js"></script>
     <script src="assets/js/render-media.js"></script>
+    <script src="assets/js/render-services.js"></script>
   </body>
 </html>
 

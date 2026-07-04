@@ -14,10 +14,22 @@
     });
   }
 
-  async function prefillBookingForm(form, talents, events) {
+  async function populateServiceSelect(services) {
+    const select = document.getElementById("booking-service");
+    if (!select) return;
+    services.forEach((service) => {
+      const option = document.createElement("option");
+      option.value = service.id;
+      option.textContent = service.title;
+      select.append(option);
+    });
+  }
+
+  async function prefillBookingForm(form, talents, events, services) {
     const talentId = SWUtils.getQueryParam("talent");
     const eo = SWUtils.brandFromSlug(SWUtils.getQueryParam("eo") || SWUtils.getQueryParam("brand"));
     const eventId = SWUtils.getQueryParam("event");
+    const serviceId = SWUtils.getQueryParam("service");
 
     if (eo && field(form, "eo")) {
       field(form, "eo").value = eo;
@@ -28,6 +40,16 @@
       if (talent) {
         field(form, "talent").value = talent.id;
         field(form, "eo").value = talent.division === "Hybrid" ? "Hybrid" : talent.division;
+      }
+    }
+
+    if (serviceId && field(form, "service")) {
+      const service = services.find((item) => item.id === serviceId);
+      if (service) {
+        field(form, "service").value = service.id;
+        if (!field(form, "notes").value) {
+          field(form, "notes").value = `Service reference: ${service.title} (${service.id})`;
+        }
       }
     }
 
@@ -48,7 +70,7 @@
   }
 
   function validateBookingForm(form) {
-    const required = ["name", "whatsapp", "eo", "eventType", "eventDate", "eventTime", "location"];
+    const required = ["name", "whatsapp", "email", "eo", "eventType", "eventDate", "eventTime", "location"];
     const invalid = required.find((name) => !String(field(form, name).value || "").trim());
     if (invalid) {
       field(form, invalid).focus();
@@ -63,6 +85,7 @@
 
   function generateWhatsAppMessage(form) {
     const talentSelect = field(form, "talent");
+    const serviceSelect = field(form, "service");
     return [
       "Halo AintSaint, saya ingin booking untuk acara:",
       "",
@@ -71,6 +94,7 @@
       `Email: ${field(form, "email").value}`,
       `EO: ${field(form, "eo").value}`,
       `Talent: ${selectedText(talentSelect)}`,
+      `Service: ${selectedText(serviceSelect)}`,
       `Jenis acara: ${field(form, "eventType").value}`,
       `Tanggal: ${field(form, "eventDate").value}`,
       `Jam: ${field(form, "eventTime").value}`,
@@ -91,14 +115,19 @@
     const form = document.getElementById("booking-form");
     if (!form) return;
     const message = document.getElementById("booking-message");
-    const [settings, talents, events] = await Promise.all([
+    const preview = document.getElementById("booking-preview");
+    const copyButton = document.getElementById("copy-booking-message");
+    const openLink = document.getElementById("open-whatsapp-link");
+    const [settings, talents, events, services] = await Promise.all([
       loadSettings(),
       loadJSON("data/talents.json"),
-      loadJSON("data/events.json")
+      loadJSON("data/events.json"),
+      loadJSON("data/services.json")
     ]);
 
     await populateTalentSelect(talents);
-    await prefillBookingForm(form, talents, events);
+    await populateServiceSelect(services);
+    await prefillBookingForm(form, talents, events, services);
 
     form.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -109,9 +138,32 @@
         return;
       }
       const whatsappMessage = generateWhatsAppMessage(form);
-      message.textContent = "Opening WhatsApp...";
+      const whatsappUrl = SWUtils.toWhatsAppUrl(settings.whatsapp, whatsappMessage);
+      if (preview) preview.value = whatsappMessage;
+      if (copyButton) copyButton.disabled = false;
+      if (openLink) {
+        openLink.href = whatsappUrl;
+        openLink.target = "_blank";
+        openLink.rel = "noopener";
+        openLink.classList.remove("is-disabled");
+        openLink.removeAttribute("aria-disabled");
+      }
+      message.textContent = "Message ready. Copy it or open WhatsApp to send.";
       message.classList.add("is-success");
-      redirectToWhatsApp(settings, whatsappMessage);
+    });
+
+    copyButton?.addEventListener("click", async () => {
+      if (!preview?.value) return;
+      try {
+        await navigator.clipboard.writeText(preview.value);
+        message.textContent = "Booking message copied.";
+        message.classList.add("is-success");
+      } catch (error) {
+        console.warn(error);
+        preview.focus();
+        preview.select();
+        message.textContent = "Copy manually from the preview field.";
+      }
     });
   }
 
@@ -119,6 +171,7 @@
 
   window.getQueryParam = SWUtils.getQueryParam;
   window.populateTalentSelect = populateTalentSelect;
+  window.populateServiceSelect = populateServiceSelect;
   window.prefillBookingForm = prefillBookingForm;
   window.validateBookingForm = validateBookingForm;
   window.generateWhatsAppMessage = generateWhatsAppMessage;

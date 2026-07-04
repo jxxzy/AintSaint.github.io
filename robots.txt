@@ -1,7 +1,7 @@
 ﻿User-agent: *
 Allow: /
 
-Sitemap: https://username.github.io/aintsaint-website/sitemap.xml
+Sitemap: https://jxxzy.github.io/AintSaint.github.io/sitemap.xml
 
 
 

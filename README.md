@@ -13,6 +13,7 @@ Website versi 1 untuk AintSaint, media platform yang menaungi dua EO: SinnersNig
 - Music / Mix Library dengan filter
 - Events
 - Media
+- Services
 - Booking via WhatsApp
 - Contact
 
@@ -20,10 +21,10 @@ Website versi 1 untuk AintSaint, media platform yang menaungi dua EO: SinnersNig
 
 Cara cepat:
 
-1. Buka `index.html` langsung di browser.
-2. Jika browser memblokir fetch JSON saat dibuka dari file lokal, gunakan Live Server di VS Code.
+1. Jalankan static server lokal agar JSON bisa dibaca browser.
+2. Buka URL lokal dari server.
 
-Alternatif:
+Contoh:
 
 ```bash
 python -m http.server 4173
@@ -61,6 +62,30 @@ Jangan gunakan path absolut seperti:
 /assets/img/talents/talent-01.jpg
 ```
 
+### Cara Update Data
+
+- `settings.json`: WhatsApp booking, email, Instagram AintSaint, Instagram SinnersNight, Instagram WestSidePeople, TikTok, YouTube, SoundCloud, dan address.
+- `talents.json`: 7 talent, division, genre, bio, foto, dan social link resmi.
+- `mixes.json`: URL konten asli, platform, thumbnail, talent owner, EO owner, genre, status, mood, tracklist, eventId, dan series.
+- `events.json`: event asli, venue, city, date, lineup, poster, description, dan status.
+- `media.json`: latest video, reels, aftermovie, event recap, behind the scene, talent content, URL asli, caption, priority, dan eventId.
+- `services.json`: layanan publik yang dirender di `services.html`, termasuk title, description, bestFor, dan booking query.
+- `gallery.json`: foto performance, crowd, booth, event moment, dan hubungan ke talent/event.
+
+### Fallback Data
+
+`assets/js/data-loader.js` hanya menyimpan fallback minimal untuk production. Jangan isi dummy panjang di fallback. Data utama harus tetap ada di folder `data/`.
+
+### Checklist Placeholder Sebelum Publish
+
+- Tidak ada nama brand lama.
+- Tidak ada nama EO lokal lama.
+- Tidak ada embed ID dummy.
+- Tidak ada URL umum platform sosial/media.
+- Social link kosong akan tampil pending/non-clickable sampai link resmi diisi.
+- Update nomor WhatsApp dan email asli sebelum dipakai untuk campaign.
+- Ganti nama/foto talent placeholder dengan data resmi sebelum public brand push besar.
+
 ## Booking WhatsApp
 
 Nomor WhatsApp ada di:
@@ -78,6 +103,16 @@ Format:
 ```
 
 Booking form tidak menggunakan backend dan tidak menyimpan data pribadi ke localStorage. Setelah form valid, website membuat pesan WhatsApp otomatis.
+
+Booking mendukung query:
+
+```text
+booking.html?eo=sinnersnight
+booking.html?eo=westsidepeople
+booking.html?talent=talent-01
+booking.html?event=event-001
+booking.html?service=service-dj-performance
+```
 
 ## Deploy GitHub Pages
 
@@ -105,13 +140,17 @@ Setiap page sudah punya:
 - favicon placeholder
 - semantic HTML
 
-Update `robots.txt` dan `sitemap.xml` setelah URL GitHub Pages final diketahui.
+`robots.txt` dan `sitemap.xml` sudah diarahkan ke:
+
+```text
+https://jxxzy.github.io/AintSaint.github.io/
+```
 
 ## Future Auto Sync
 
-Phase 1 saat ini memakai manual JSON.
+Current: manual JSON update.
 
-Phase 1.5 bisa ditambahkan nanti dengan GitHub Actions:
+Auto sync belum aktif. Phase 1.5 bisa ditambahkan nanti dengan GitHub Actions:
 
 - `workflow_dispatch`
 - schedule setiap 6 jam

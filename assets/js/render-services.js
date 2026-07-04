@@ -6,7 +6,7 @@
         <p>${SWUtils.escapeHTML(service.description)}</p>
         <div class="tag-cloud">${SWUtils.genreTags(service.bestFor)}</div>
         <div class="talent-card__actions">
-          <a class="btn btn-ghost" href="booking.html?service=${SWUtils.escapeHTML(service.id)}">Book service</a>
+          <a class="btn btn-primary" href="booking.html?service=${SWUtils.escapeHTML(service.id)}">Book This Service</a>
         </div>
       </article>
     `;
@@ -15,6 +15,10 @@
   function renderServicesGrid(containerId, services) {
     const container = document.getElementById(containerId);
     if (!container) return;
+    if (!services || services.length === 0) {
+      SWUtils.renderEmpty(container, "No services found.");
+      return;
+    }
     container.innerHTML = services.map(serviceCard).join("");
     requestAnimationFrame(() => container.querySelectorAll(".reveal").forEach((item) => item.classList.add("is-visible")));
   }

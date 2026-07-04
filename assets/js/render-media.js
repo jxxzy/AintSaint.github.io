@@ -5,8 +5,13 @@
 
   function mediaCard(item, talents) {
     const talentName = item.talentId ? SWUtils.talentNameById(talents, item.talentId) : "AintSaint";
+    const url = item.url || "";
+    const shareTarget = url || `${window.location.href.split("#")[0]}#${encodeURIComponent(item.id)}`;
+    const action = url
+      ? `<a class="btn btn-primary" href="${SWUtils.escapeHTML(url)}" target="_blank" rel="noopener">Watch</a>`
+      : `<button class="btn btn-primary is-disabled" type="button" disabled>Link pending</button>`;
     return `
-      <article class="mix-card reveal">
+      <article class="mix-card reveal" id="${SWUtils.escapeHTML(item.id)}">
         <img class="mix-card__thumb" src="${SWUtils.escapeHTML(item.thumbnail)}" alt="${SWUtils.escapeHTML(item.title)} thumbnail">
         <div class="mix-card__body">
           <div class="mix-card__topline">
@@ -18,8 +23,8 @@
           <p>${SWUtils.escapeHTML(talentName)}</p>
           <p>${SWUtils.formatDate(item.publishedAt)}</p>
           <div class="mix-card__actions">
-            <a class="btn btn-primary" href="${SWUtils.escapeHTML(item.url || "#")}" target="_blank" rel="noopener">Watch</a>
-            <button class="btn btn-ghost" type="button" data-share-url="${SWUtils.escapeHTML(item.url || window.location.href)}" data-share-title="${SWUtils.escapeHTML(item.title)}">Share</button>
+            ${action}
+            <button class="btn btn-ghost" type="button" data-share-url="${SWUtils.escapeHTML(shareTarget)}" data-share-title="${SWUtils.escapeHTML(item.title)}">Share</button>
           </div>
         </div>
       </article>

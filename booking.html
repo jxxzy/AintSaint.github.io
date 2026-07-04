@@ -36,8 +36,8 @@
                 <input name="whatsapp" type="tel" autocomplete="tel" required>
               </label>
               <label>
-                <span>Email</span>
-                <input name="email" type="email" autocomplete="email">
+                <span>Email *</span>
+                <input name="email" type="email" autocomplete="email" required>
               </label>
               <label>
                 <span>Pilih EO *</span>
@@ -52,6 +52,12 @@
                 <span>Pilih talent</span>
                 <select name="talent" id="booking-talent">
                   <option value="All / Not sure yet">All / Not sure yet</option>
+                </select>
+              </label>
+              <label>
+                <span>Service</span>
+                <select name="service" id="booking-service">
+                  <option value="Not sure yet">Not sure yet</option>
                 </select>
               </label>
               <label>
@@ -107,7 +113,15 @@
               </label>
             </div>
             <p class="form-message" id="booking-message" aria-live="polite"></p>
-            <button class="btn btn-primary" type="submit">Generate WhatsApp Message</button>
+            <label class="form-full booking-preview">
+              <span>Preview Message</span>
+              <textarea id="booking-preview" rows="9" readonly placeholder="Booking message preview will appear here after validation."></textarea>
+            </label>
+            <div class="booking-actions">
+              <button class="btn btn-primary" type="submit">Preview Message</button>
+              <button class="btn btn-ghost" type="button" id="copy-booking-message" disabled>Copy Message</button>
+              <a class="btn btn-light is-disabled" id="open-whatsapp-link" aria-disabled="true">Open WhatsApp</a>
+            </div>
           </form>
 
           <aside class="booking-notes reveal">

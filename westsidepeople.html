@@ -50,6 +50,78 @@
         </div>
       </section>
 
+      <section class="section section--soft">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2>Featured WestSidePeople Event</h2>
+              <p>Upcoming local Indonesia sound event atau hybrid showcase yang relevan untuk WestSidePeople.</p>
+            </div>
+            <a class="text-link" href="events.html">All events</a>
+          </div>
+          <div id="westside-featured-event" class="event-grid"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-column">
+          <article class="card reveal">
+            <h2>WestSidePeople Event Format</h2>
+            <ul class="check-list">
+              <li>Local Crowd Session</li>
+              <li>Breakbeat Night</li>
+              <li>Funkot / Hardfunk Room</li>
+              <li>Coffee Shop Local Movement</li>
+              <li>Community Showcase</li>
+              <li>Pantura / Local Remix Session</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h2>WestSidePeople Best For</h2>
+            <ul class="check-list">
+              <li>Coffee shop</li>
+              <li>Community event</li>
+              <li>Campus event</li>
+              <li>Private party</li>
+              <li>Local crowd showcase</li>
+              <li>Brand activation lokal</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2>WestSidePeople Services</h2>
+              <p>Service yang paling cocok untuk local Indonesia sound, crowd culture, dan komunitas.</p>
+            </div>
+            <a class="text-link" href="services.html">View services</a>
+          </div>
+          <div class="service-grid service-grid--compact">
+            <article class="service-card reveal">
+              <h3>Coffee Shop Event</h3>
+              <p>Format local movement untuk crowd sore/malam yang dekat dengan komunitas.</p>
+              <div class="tag-cloud"><span>Coffee Shop</span><span>Pop-up</span><span>Community</span></div>
+              <a class="btn btn-accent" href="booking.html?service=service-coffee-shop-event&eo=westsidepeople">Book This Service</a>
+            </article>
+            <article class="service-card reveal">
+              <h3>DJ Performance</h3>
+              <p>Performance DJ dengan breakbeat, funkot, hardfunk, dan local remix culture.</p>
+              <div class="tag-cloud"><span>Community</span><span>Private Party</span><span>Campus Event</span></div>
+              <a class="btn btn-accent" href="booking.html?service=service-dj-performance&eo=westsidepeople">Book This Service</a>
+            </article>
+            <article class="service-card reveal">
+              <h3>Media / Aftermovie</h3>
+              <p>Recap dan short content untuk menangkap local crowd moment setelah event.</p>
+              <div class="tag-cloud"><span>Event Recap</span><span>Social Content</span><span>Crowd</span></div>
+              <a class="btn btn-accent" href="booking.html?service=service-media-aftermovie&eo=westsidepeople">Book This Service</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section section--soft" id="westside-talents">
         <div class="container">
           <div class="section-header">
@@ -91,17 +163,24 @@
 
       <section class="section">
         <div class="container feature-band feature-band--westside reveal">
-          <h2>Event Concept</h2>
-          <p>Local crowd night, coffee shop movement, community showcase, dan event lokal yang butuh energi dekat dengan audience.</p>
+          <h2>Book WestSidePeople</h2>
+          <p>Book WestSidePeople for local Indonesia sound, crowd culture, and genre lokal energy.</p>
           <a class="btn btn-accent" href="booking.html?eo=westsidepeople">Book WestSidePeople</a>
         </div>
       </section>
     </main>
+    <div class="modal" id="event-modal" aria-hidden="true">
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+        <button class="modal__close" type="button" data-close-modal aria-label="Close event detail">Close</button>
+        <div id="event-modal-content"></div>
+      </div>
+    </div>
     <div id="site-footer"></div>
     <a class="floating-whatsapp" href="booking.html" aria-label="Chat WhatsApp AintSaint" data-whatsapp-link><img src="assets/icons/whatsapp.svg" alt=""></a>
     <script src="assets/js/data-loader.js"></script>
     <script src="assets/js/utils.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/render-events.js"></script>
     <script src="assets/js/render-talents.js"></script>
     <script src="assets/js/render-mixes.js"></script>
     <script src="assets/js/render-media.js"></script>

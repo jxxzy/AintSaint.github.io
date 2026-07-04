@@ -124,12 +124,12 @@ main {
   align-items: center;
   border-radius: 6px;
   color: var(--color-muted);
-  font-size: 0.91rem;
+  font-size: 0.86rem;
   font-weight: 650;
 }
 
 .navbar a {
-  padding: 0 11px;
+  padding: 0 9px;
 }
 
 .navbar a:hover,
@@ -719,6 +719,10 @@ main {
   background: linear-gradient(135deg, rgba(250, 204, 21, 0.2), rgba(34, 197, 94, 0.12)), #111116;
 }
 
+.media-categories {
+  margin-bottom: 24px;
+}
+
 .cta-band {
   display: flex;
   align-items: center;
@@ -973,9 +977,37 @@ textarea:focus {
   color: #b8ffd3;
 }
 
+.booking-preview {
+  display: block;
+  margin-top: 18px;
+}
+
+.booking-preview textarea {
+  min-height: 210px;
+}
+
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
 .booking-notes {
   display: grid;
   gap: 16px;
+}
+
+.is-disabled,
+.contact-card.is-disabled,
+.btn.is-disabled,
+.muted-link {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
+.btn.is-disabled {
+  pointer-events: none;
 }
 
 .contact-alt a,
@@ -1097,7 +1129,7 @@ textarea:focus {
 
 .site-footer__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) repeat(3, minmax(140px, 0.3fr));
+  grid-template-columns: minmax(240px, 1.2fr) repeat(4, minmax(128px, 0.45fr));
   gap: 28px;
 }
 
